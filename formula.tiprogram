@@ -1,0 +1,30 @@
+Prompt Str1
+" "+Str1+" "→Str1
+While 1
+Str1→Str4
+"ABCDEFGHIJKLMNOPQRSTUUVWXYZθ"→Str2
+2→J
+length(Str1)→G
+While J<G
+sub(Str1,J,1)→Str3
+inString(Str2,Str3,1)→K
+If K≠1
+Then
+sub(Str2,K+1,length(Str2)-K)→Str2
+Else
+sub(Str2,1,K-1)+sub(Str2,K+1,length(Str2)-K)→Str2
+End
+Input Str3+"=",F
+For(M,1,length(Str1)+1,1)
+If Str3=sub(Str1,M,1)
+Then
+sub(Str1,1,M-1)+"("+toString(F)+")"+sub(Str1,M+1,length(Str1)-M)→Str1
+End
+End
+End
+J+1→J
+length(Str1)→G
+End
+Disp expr(sub(Str1,2,length(Str1)-2))
+Str4→Str1
+End
